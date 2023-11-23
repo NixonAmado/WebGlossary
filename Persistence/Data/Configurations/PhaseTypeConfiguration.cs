@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data;
 
-class PhasetypeConfiguration:IEntityTypeConfiguration<Phasetype>
+public class PhasetypeConfiguration:IEntityTypeConfiguration<Phasetype>
 {
     public void Configure(EntityTypeBuilder<Phasetype> builder)
     {

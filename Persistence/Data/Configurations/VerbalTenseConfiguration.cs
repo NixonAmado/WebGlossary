@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data;
 
-class VerbaltenseConfiguration:IEntityTypeConfiguration<Verbaltense>
+public class VerbaltenseConfiguration:IEntityTypeConfiguration<Verbaltense>
 {
     public void Configure(EntityTypeBuilder<Verbaltense> builder)
     {

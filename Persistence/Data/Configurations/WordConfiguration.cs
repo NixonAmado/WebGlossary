@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data;
 
-class WordConfiguration:IEntityTypeConfiguration<Word>
+public class WordConfiguration:IEntityTypeConfiguration<Word>
 {
     public void Configure(EntityTypeBuilder<Word> builder)
     {

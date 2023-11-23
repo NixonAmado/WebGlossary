@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data;
 
-class PhaseverbaltenseConfiguration:IEntityTypeConfiguration<Phaseverbaltense>
+public class PhaseverbaltenseConfiguration:IEntityTypeConfiguration<Phaseverbaltense>
 {
     public void Configure(EntityTypeBuilder<Phaseverbaltense> builder)
     {
