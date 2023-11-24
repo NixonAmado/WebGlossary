@@ -25,6 +25,10 @@ public class PhaseController : BaseApiController
     public async Task<ActionResult<IEnumerable<G_PhaseDto>>> Get()
     {
         var Phases = await _unitOfWork.Phases.GetAllAsync();
+         if (Phases == null)
+        {
+            return BadRequest("Phase can´t be null!");
+        }
         return _mapper.Map<List<G_PhaseDto>>(Phases);
     }
 

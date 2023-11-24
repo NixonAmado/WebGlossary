@@ -5,9 +5,9 @@ public class G_PhaseDto
 {
     public int Id { get; set; }
 
-    public string Phase1 { get; set; } = null!;
-    public virtual PVerbalTenseDescriptionDto PhaseVerbalTense { get; set; } = null!;
-    public virtual PStructureDescriptionDto PhaseStructure { get; set; } = null!;
-    public virtual PTypeDescriptionDto PhaseType { get; set; } = null!;
+    public string Phase { get; set; } = null!;
+    public virtual PVerbalTenseDescriptionDto VerbalTense { get; set; } = null!;
+    public virtual PStructureDescriptionDto Structure { get; set; } = null!;
+    public virtual PTypeDescriptionDto Type { get; set; } = null!;
 
 }

@@ -15,6 +15,17 @@ namespace Application.Repository;
         {
             _context = context;
         }
+
+        public override async Task<IEnumerable<Phase>> GetAllAsync()
+        {
+            return await _context.Phases
+                                .Include(p => p.PhaseVerbalTense)
+                                .Include(p => p.PhaseStructure)
+                                .Include(p => p.PhaseVerbalTense)
+                                .ToListAsync();
+
+
+        }
     public override async Task<(int totalRegistros, IEnumerable<Phase> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
             {
                 var query = _context.Phases as IQueryable<Phase>;
