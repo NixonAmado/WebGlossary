@@ -32,7 +32,7 @@ public class PhaseConfiguration:IEntityTypeConfiguration<Phase>
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("PhaseStructure_id");
 
-        builder.HasOne(d => d.PhaseStructureNavigation).WithMany(p => p.Phases)
+        builder.HasOne(d => d.PhaseVerbalTense).WithMany(p => p.Phases)
             .HasForeignKey(d => d.PhaseStructureId)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("PhaseVerbalTense_id");

@@ -17,7 +17,7 @@ namespace Application.Repository;
         }
     public override async Task<(int totalRegistros, IEnumerable<Wordtype> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
             {
-                var query = _context.WordTypes ;
+                var query = _context.Wordtypes as IQueryable<Wordtype>;
     
                 if(!string.IsNullOrEmpty(search))
                 {

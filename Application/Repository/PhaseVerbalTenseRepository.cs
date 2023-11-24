@@ -17,8 +17,8 @@ namespace Application.Repository;
         }
     public override async Task<(int totalRegistros, IEnumerable<Phaseverbaltense> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
             {
-                var query = _context.PhaseVerbalTenses as IQueryable<PhaseVerbalTense>;
-    
+                var query = _context.Phaseverbaltenses as IQueryable<Phaseverbaltense>;
+ 
                 if(!string.IsNullOrEmpty(search))
                 {
                     query = query.Where(p => p.Description.ToLower().Contains(search.ToLower()));

@@ -19,7 +19,7 @@ public partial class Phase
 
     public virtual Phasestructure PhaseStructure { get; set; } = null!;
 
-    public virtual Phaseverbaltense PhaseStructureNavigation { get; set; } = null!;
+    public virtual Phaseverbaltense PhaseVerbalTense { get; set; } = null!;
 
     public virtual Phasetype PhaseType { get; set; } = null!;
 }
