@@ -7,17 +7,17 @@ using Persistence.Data;
 
 namespace Application.Repository;
 
-    public class VerbalTenseTenseRepository : GenericRepository<VerbalTensetense>, IVerbalTenseTense
+    public class VerbalTenseRepository : GenericRepository<Verbaltense>, IVerbalTense
     {
         private readonly DbAppContext _context;
 
-        public VerbalTenseTenseRepository(DbAppContext context): base(context)
+        public VerbalTenseRepository(DbAppContext context): base(context)
         {
             _context = context;
         }
-    public override async Task<(int totalRegistros, IEnumerable<VerbalTensetense> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
+    public override async Task<(int totalRegistros, IEnumerable<Verbaltense> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
             {
-                var query = _context.VerbalTenseTenses as IQueryable<VerbalTenseTense>;
+                var query = _context.Verbaltenses as IQueryable<Verbaltense>;
     
                 if(!string.IsNullOrEmpty(search))
                 {

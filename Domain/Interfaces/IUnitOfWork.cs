@@ -4,7 +4,6 @@ namespace Domain.Interfaces
     {
         public IRole Roles {get;}
         public IUser Users {get;}
-        public IRefreshToken RefreshTokens {get;}
         public IPhase Phases {get;}
         public IPhaseStructure PhaseStructures {get;}
         public IPhaseType PhaseTypes {get;}
