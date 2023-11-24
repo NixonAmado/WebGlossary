@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Domain.Entities;
+using System.Reflection;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Data;
@@ -40,9 +42,21 @@ public partial class DbAppContext : DbContext
         modelBuilder
             .UseCollation("utf8mb3_general_ci")
             .HasCharSet("utf8mb3");
+
+        var roles = new[]
+        {
+            new Role { Id = 1, Description = "Administrador" },
+            new Role { Id = 2, Description = "Empleado" },
+            // Agrega otros roles según tus necesidades
+        };
+
+        modelBuilder.Entity<Role>().HasData(roles);
     
 
         OnModelCreatingPartial(modelBuilder);
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     
     }
