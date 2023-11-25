@@ -23,21 +23,21 @@ public class WordTypesController : BaseApiController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<G_PTypeDto>>> Get()
+    public async Task<ActionResult<IEnumerable<G_WTypeDto>>> Get()
     {
         var WordTypes = await _unitOfWork.WordTypes.GetAllAsync();
-        return _mapper.Map<List<G_PTypeDto>>(WordTypes);
+        return _mapper.Map<List<G_WTypeDto>>(WordTypes);
     }
 
     [HttpGet]
     [ApiVersion("1.1")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<G_PTypeDto>>> Get([FromQuery] Params WordTypesParams)
+    public async Task<ActionResult<Pager<G_WTypeDto>>> Get([FromQuery] Params WordTypesParams)
     {
         var (totalRegistros, registros) = await _unitOfWork.WordTypes.GetAllAsync(WordTypesParams.PageIndex,WordTypesParams.PageSize,WordTypesParams.Search);
-        var listaProv = _mapper.Map<List<G_PTypeDto>>(registros);
-        return new Pager<G_PTypeDto>(listaProv,totalRegistros,WordTypesParams.PageIndex,WordTypesParams.PageSize,WordTypesParams.Search);
+        var listaProv = _mapper.Map<List<G_WTypeDto>>(registros);
+        return new Pager<G_WTypeDto>(listaProv,totalRegistros,WordTypesParams.PageIndex,WordTypesParams.PageSize,WordTypesParams.Search);
     }
 
     [HttpPost]

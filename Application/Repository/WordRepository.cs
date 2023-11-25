@@ -15,6 +15,17 @@ namespace Application.Repository;
         {
             _context = context;
         }
+
+        public override async Task<IEnumerable<Word>> GetAllAsync()
+        {
+            return await _context.Words
+                                .Include(p => p.WordType)
+                                .Include(p => p.VerbalTense)
+                                .ToListAsync();
+
+
+        }
+
     public override async Task<(int totalRegistros, IEnumerable<Word> registros)> GetAllAsync(int pageIndex, int pageSize, string search)
             {
                 var query = _context.Words as IQueryable<Word>;

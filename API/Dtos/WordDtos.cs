@@ -6,11 +6,11 @@ public class G_WordDto
 
     public string Word { get; set; }
 
-    public sbyte Plural { get; set; }
+    public bool Plural { get; set; }
 
-    public virtual VerbalTenseDescriptionDto VerbalTense { get; set; }
+    public virtual string VerbalTense { get; set; }
 
-    public virtual WordTypeDescriptionDto WordType { get; set; }
+    public virtual string WordType { get; set; }
 
     public string Translation { get; set; }
 
