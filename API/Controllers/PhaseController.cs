@@ -1,4 +1,5 @@
 using API.Dtos;
+using API.Helpers;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -25,23 +26,19 @@ public class PhaseController : BaseApiController
     public async Task<ActionResult<IEnumerable<G_PhaseDto>>> Get()
     {
         var Phases = await _unitOfWork.Phases.GetAllAsync();
-         if (Phases == null)
-        {
-            return BadRequest("Phase can´t be null!");
-        }
         return _mapper.Map<List<G_PhaseDto>>(Phases);
     }
 
-    // [HttpGet]
-    // [ApiVersion("1.1")]
-    // [ProducesResponseType(StatusCodes.Status200OK)]
-    // [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    // public async Task<ActionResult<Pager<G_PhaseDto>>> Get([FromQuery] Params PhaseParams)
-    // {
-    //     var (totalRegistros, registros) = await _unitOfWork.Phases.GetAllAsync(PhaseParams.PageIndex,PhaseParams.PageSize,PhaseParams.Search);
-    //     var listaProv = _mapper.Map<List<G_PhaseDto>>(registros);
-    //     return new Pager<G_PhaseDto>(listaProv,totalRegistros,PhaseParams.PageIndex,PhaseParams.PageSize,PhaseParams.Search);
-    // }
+    [HttpGet]
+    [ApiVersion("1.1")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<G_PhaseDto>>> Get([FromQuery] Params PhaseParams)
+    {
+        var (totalRegistros, registros) = await _unitOfWork.Phases.GetAllAsync(PhaseParams.PageIndex,PhaseParams.PageSize,PhaseParams.Search);
+        var listaProv = _mapper.Map<List<G_PhaseDto>>(registros);
+        return new Pager<G_PhaseDto>(listaProv,totalRegistros,PhaseParams.PageIndex,PhaseParams.PageSize,PhaseParams.Search);
+    }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
