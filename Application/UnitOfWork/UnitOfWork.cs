@@ -89,7 +89,7 @@
                 }
             }        
             
-            public IWordType WordType 
+            public IWordType WordTypes 
             {
                 get
                 {

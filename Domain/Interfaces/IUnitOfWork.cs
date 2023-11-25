@@ -10,7 +10,7 @@ namespace Domain.Interfaces
         public IPhaseVerbalTense PhaseVerbalTenses {get;}
         public IVerbalTense VerbalTenses {get;}
         public IWord Words {get;}
-        public IWordType WordType {get;}
+        public IWordType WordTypes {get;}
 
         Task<int> SaveAsync();
     }

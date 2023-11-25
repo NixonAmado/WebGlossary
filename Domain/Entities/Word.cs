@@ -19,5 +19,5 @@ public partial class Word
 
     public virtual Verbaltense VerbalTense { get; set; } = null!;
 
-    public virtual Wordtype VerbalTenseNavigation { get; set; } = null!;
+    public virtual Wordtype WordType { get; set; } = null!;
 }

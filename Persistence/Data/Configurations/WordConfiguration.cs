@@ -23,7 +23,7 @@ public class WordConfiguration:IEntityTypeConfiguration<Word>
             .HasForeignKey(d => d.VerbalTenseId)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("VerbalTense_id");
-        builder.HasOne(d => d.VerbalTenseNavigation).WithMany(p => p.Words)
+        builder.HasOne(d => d.WordType).WithMany(p => p.Words)
                 .HasForeignKey(d => d.VerbalTenseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("WordType_id");        
