@@ -10,7 +10,7 @@ namespace Domain.Entities
     public class Role
     {
         public int Id { get; set; }
-        public required string Description { get; set; }
+        public  string Description { get; set; }
         public virtual ICollection<User> Users { get; set; } = new HashSet<User>();
         public virtual ICollection<UserRole>? UsersRoles {get;set;}
     

@@ -1,5 +1,6 @@
 using Domain;
 using Domain.Entities;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Data;
 
@@ -14,7 +15,7 @@ namespace Application.Repository
             _context = context;
         }
 
-        public async Task<User> GetByNameAsync(string name)
+        public async Task<User> GetByUserNameAsync(string name)
         {
             return await _context.Users
                             .Include(p => p.Roles)
