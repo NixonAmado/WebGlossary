@@ -1,7 +1,7 @@
 using Domain.Entities;
 using Domain.Interfaces;
 
-namespace Domain;
+namespace Domain.Interfaces;
 public interface IPhaseVerbalTense : IGenericRepository<Phaseverbaltense>
     {    
     

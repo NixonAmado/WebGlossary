@@ -10,8 +10,8 @@ namespace Domain.Entities
     {
         public int Id  {get;set;}
         public int User_id { get; set; }
-        public required User UserNavigation { get; set; }
-        public required string Token { get; set;}
+        public  User UserNavigation { get; set; } = null!;
+        public  string Token { get; set;} = null!;
         public DateTime Expires {get;set;}
         public bool IsExpired => DateTime.UtcNow >= Expires;
         public DateTime Created {get;set;}
