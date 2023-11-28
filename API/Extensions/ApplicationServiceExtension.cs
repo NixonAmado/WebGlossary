@@ -30,6 +30,12 @@ public static class ApplicationServiceExtension
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
+    public static void AddOpenAi(this IServiceCollection services, IConfiguration configuration)
+    {
+        // custom service configuration  using 'OpenAiOptions'...
+        services.Configure<OpenAi>(configuration.GetSection("OpenAi"));
+    }
+
     public static void ConfigureRateLimiting(this IServiceCollection services) 
         {
             services.AddMemoryCache();
@@ -63,7 +69,6 @@ public static class ApplicationServiceExtension
                     new QueryStringApiVersionReader("Ver"),
                     new HeaderApiVersionReader("X-Version")
                 );
-            
             });
         }
     public static void AddJwt(this IServiceCollection services, IConfiguration configuration)

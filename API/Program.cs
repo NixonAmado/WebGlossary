@@ -30,6 +30,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.ConfigureCors(); // aplica el cors de serviceExtension
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); // aplica automapper
 builder.Services.AddJwt(builder.Configuration); //Aplicacion de JWT
+builder.Services.AddOpenAi(builder.Configuration); //Aplicacion de OpenAi
 builder.Services.ConfigureRateLimiting();
 builder.Services.ConfigureApiVersioning();  
 builder.Services.AddAplicacionServices(); // para que aplique el archivo de extensions
