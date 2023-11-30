@@ -8,16 +8,24 @@ namespace API.Services;
 public class OpenAIService : IOpenAIService
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private readonly OpenAi _openAiConfiguration;
-
-    public OpenAIService(IUnitOfWork unitOfWork, HttpClient httpClient, IOptions<OpenAi> openAiConfiguration)
+    private  HttpClient _httpClient;
+    public OpenAIService(IUnitOfWork unitOfWork, IHttpClientFactory httpClientFactory, IOptions<OpenAi> openAiConfiguration)
     {
         _unitOfWork = unitOfWork;
-        _httpClient = httpClient;
+        _httpClientFactory = httpClientFactory;
         _openAiConfiguration = openAiConfiguration.Value;
+        InitializeHtpCLient();
+    }
+
+    private void InitializeHtpCLient()
+    {
+        _httpClient = _httpClientFactory.CreateClient("OpenAiApiClient");
         _httpClient.BaseAddress = new Uri(_openAiConfiguration.ApiUrl);
         _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+        _httpClient.Timeout = TimeSpan.FromSeconds(30);
+        _httpClient.DefaultRequestHeaders.Add("Usser-Agent", "MiApp/1.0 (Windows; U; Windows NT 10.0; en-US; rv:1.8.1.6)");
     }
 
     public async Task<string> DetermineWordFeatures(WordDto WordDto)
@@ -29,6 +37,7 @@ public class OpenAIService : IOpenAIService
             var requestBodyJson = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
             var content = new StringContent(requestBodyJson, Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("", content);
+            await Task.Delay(TimeSpan.FromSeconds(1)); 
             if (response.IsSuccessStatusCode)
             {
                 var responseJson = await response.Content.ReadAsStringAsync();

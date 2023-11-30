@@ -23,14 +23,24 @@ public static class ApplicationServiceExtension
                 .AllowAnyMethod()           //WithMethods(*GET", "POST")
                 .AllowAnyHeader());         //WithHeaders(*accept*, "content-type")
             });
-    
+    public static void AddOpenAiHttpClient(this IServiceCollection services)
+    {
+        services.AddHttpClient("OpenAiClient", client =>
+        {
+
+        })
+        ;
+    }
     public static void AddAplicacionServices(this IServiceCollection services)
     {
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IOpenAIService, OpenAIService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddOpenAiHttpClient();
     }
+
+
     public static void AddOpenAi(this IServiceCollection services, IConfiguration configuration)
     {
         // custom service configuration  using 'OpenAiOptions'...
