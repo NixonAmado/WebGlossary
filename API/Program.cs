@@ -32,6 +32,7 @@ builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); // aplica automappe
 builder.Services.AddJwt(builder.Configuration); //Aplicacion de JWT
 builder.Services.AddOpenAi(builder.Configuration); //Aplicacion de OpenAi
 builder.Services.ConfigureRateLimiting();
+builder.Services.AddHttpClient();
 builder.Services.ConfigureApiVersioning();  
 builder.Services.AddAplicacionServices(); // para que aplique el archivo de extensions
 builder.Services.AddDbContext<DbAppContext>(options =>

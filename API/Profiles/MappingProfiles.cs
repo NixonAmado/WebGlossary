@@ -29,6 +29,8 @@ public class MappingProfiles : Profile
         .ForMember(w => w.VerbalTense, op => op.MapFrom(e => e.VerbalTense.Description))
         .ForMember(w => w.WordType, op => op.MapFrom(e => e.WordType.Description))
         .ReverseMap();
+        CreateMap<Word, WordDto>().ReverseMap();
+
 
         CreateMap<Phase, G_PhaseDto>()
             .ForMember(e => e.Phase, op => op.MapFrom(e => e.Phase1))

@@ -1,5 +1,6 @@
 using API.Dtos;
 using API.Helpers;
+using API.Services;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -14,10 +15,13 @@ public class WordController : BaseApiController
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-    public WordController(IMapper mapper, IUnitOfWork unitOfWork)
+    private readonly IOpenAIService _openAIService;
+
+    public WordController(IMapper mapper, IUnitOfWork unitOfWork, IOpenAIService openAIService )
     {
         _mapper = mapper;
         _unitOfWork = unitOfWork;
+        _openAIService = openAIService;
     }
     
     [HttpGet]
@@ -43,16 +47,14 @@ public class WordController : BaseApiController
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<string>> Post(Word Word)
+    public async Task<ActionResult<string>> Post(WordDto Word)
     {
         if (Word == null)
         {
             return BadRequest("Word can´t be null!");
         }
-        _unitOfWork.Words.Add(Word);
-        await _unitOfWork.SaveAsync();
-        
-        return "Word have been successfully created";
+        var result = await _openAIService.DetermineWordFeatures(Word);
+        return Ok(result);        
     }
 
 

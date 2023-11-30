@@ -5,11 +5,13 @@
 // to define if the word is an adverb(wordType), if it's plural(plural: T,F) and if it
 // has verbaltense will tell the tense it is in.
 
+using API.Dtos;
+
 namespace API.Services
 {
     public interface IOpenAIService
     {
-        public string DetermineWordFeatures(string word);
-        public string DeterminePhaseFeatures (string phase);
+        public Task<string> DetermineWordFeatures(WordDto word);
+        //public string DeterminePhaseFeatures (string phase);
     }
 }

@@ -28,6 +28,7 @@ public static class ApplicationServiceExtension
     {
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IOpenAIService, OpenAIService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
     public static void AddOpenAi(this IServiceCollection services, IConfiguration configuration)

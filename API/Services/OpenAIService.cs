@@ -1,10 +1,11 @@
 using System.Text;
+using API.Dtos;
 using API.Helpers;
 using Domain.Interfaces;
 using Microsoft.Extensions.Options;
 
 namespace API.Services;
-public class OpenAIService
+public class OpenAIService : IOpenAIService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly HttpClient _httpClient;
@@ -19,22 +20,30 @@ public class OpenAIService
         _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
     }
 
-    public async Task<string> DetermineWordFeatures(string word)
+    public async Task<string> DetermineWordFeatures(WordDto WordDto)
     {
         _httpClient.DefaultRequestHeaders.Add("Authorization",$"Bearer {_openAiConfiguration.ApiKey}");
-        var requestBody = new { word };
-        var requestBodyJson = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
-        var content = new StringContent(requestBodyJson, Encoding.UTF8, "application/json");
-        var response = await _httpClient.PostAsync("", content);
-        if (response.IsSuccessStatusCode)
+        if(!string.IsNullOrEmpty(WordDto.Word))
         {
-            var responseJson = await response.Content.ReadAsStringAsync();
-            return responseJson;
+            var requestBody = new { WordDto.Word, prompt = "Que tipo de palabra es"};
+            var requestBodyJson = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
+            var content = new StringContent(requestBodyJson, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync("", content);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseJson = await response.Content.ReadAsStringAsync();
+                return responseJson;
+            }
+            else
+            {
+                return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+            }
         }
         else
         {
-            return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
-        }   
+            return "error";
+        }
+           
     }
 
     

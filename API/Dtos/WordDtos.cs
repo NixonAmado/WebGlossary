@@ -14,5 +14,9 @@ public class G_WordDto
 
     public string Translation { get; set; }
 
+}
 
+public class WordDto
+{
+    public string Word { get; set; }
 }
