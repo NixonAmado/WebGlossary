@@ -1,40 +1,48 @@
-# WebGlossary
-El mundo de las TI es muy grande y muy útil, cuando tienes una idea tecnologica no tienes el conocimiento para hacerla realidad, pero lo que no sabes lo aprendes, así que, en este repositorio se ha creado una pagina web que es capaz de almacenar palabras en ingles para que después las practiques
+## WebGlossary 🚀🚀
+Soy una persona que siempre esta en constante desarrollo, siempre esta buscando nuevos retos, me gusta la programación y ver como apartir de ésta, puedo solucionar los problemas de mi entorno y en este caso situaciones personales. Desde mi llegada a campusLands siempre he estado buscando retos, y de echo los encontré, pero me surgió un problema, que era el echo de que tenía la idea, pero no tenía el conocimiento, es por esto, que agradenzco a campusLands, ya qué, estando en formación he adquirido el suficiente conocimiento tecnico incluso analitico para poder hacer que mis ideas se convirtan en algo tangible. Esta aplicación va a integrar todo lo que he aprendidó en campus por parte del backend siguiendo los principios SOLID, pienzo integrarle microservicios como:
+-JWT
+-Consumo de Api de OpenAi (pensabá en implementar ML.Net, pero por su nivel de complejidad mejor voy a utilizar una IA ya entrenada)
+-Descarga y Subida de archivos
+-Convertir de HTML/CSS a PDF
+-Azure Notification Hubs (Esto todavia es un sueño, ya que, es algo que todavia no manejo, pero el tiempo se encargará de que lo pueda implementar)
+
+BackEnd:
+-.Net Core 7
+-Asp.Net
+-Entity Framework (ORM)
+-Linq
+
+Patrones backend: 
+-MVC
+-Repository
+-DI
+-Unit of Work
+-Singleton
+
+FrontEnd: (En este proyecto solo usaré Angular, aprenderé en el proceso)
+-TypeScript
+-Css
+-HTML
+-JavaScript(solo si es necesario)
+-Bootstrap
+-JQuery
+
+Patrones FrontEnd:(No especificados)
 
 
-1.Descargar el paquete OpenAi en API
+En campuslands tuve la oprtunidad de entrenarme en SCRUM y aproveché para utilizar mi idea como product y junto con mi equipo de trabajo explorarlo y aclarar muchas cosas que estaban en el vacio.
 
-2. definir la clave de open ia y la url en appsettings.json
-  "OpenAi" :{
-    "ApiUrl" : "https://api.openai.com/v1/engines/davinci/completions",
-    "ApiKey" : "Sin implementar"
-  }
+Por supuesto que nuestra planeación y nuestro analisis no fue el mejor, se que necesitamos mejoras y feedback, por eso siente libre de comentar, ya que, los dos links tienen permisos de comentar. ayudanos a mejorar 💗💗
 
-3.Crear el helper que almacene las claves y valores del archivo Json
-  namespace API.Helpers;
-  public class OpenAi
-  {
-    public string ApiUrl {get;set;}
-    public string ApiKey {get;set;}
-  }
+Si quieres saber más acerca de la planeación que hicimos para esta idea sigue el siguiente enlace:
+https://docs.google.com/document/d/1owYqZ9iEpoDVmNXWlrRawY1ZJ5lR4FCwYbQFKi8hgg0/edit?usp=sharing
 
-4.Crear la extension de conexion con el paso Nro 2 en applicationServiceExtension
-    public static void AddOpenAi(this IServiceCollection services, IConfiguration configuration)
-    {
-        // custom service configuration  using 'OpenAiOptions'...
-        services.Configure<OpenAi>(configuration.GetSection("OpenAiOptions"));
-    }
-  - Conectar con la inyeccion de dependencias
-	builder.Services.AddOpenAi(builder.Configuration); //Aplicacion de OpenAi
+si quieres saber acerca de como manejamos las historias de usuario sigue este enlace:
+https://www.canva.com/design/DAF1xG3esFs/pgG7OTTg7K4CyERIUz9RsA/edit?utm_content=DAF1xG3esFs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-5.Crear un microservicio para el uso de openAi, siguiendo los principios solid y según el enfoque que se quiera realizar 
-implementarlo junto a las interfaces, en mi caso uso  Principio de Responsabilidad Única (SRP) para establecer un enfoque 
-unitario entre la interfaz y su implementacion
-namespace API.Services
-{
-    public interface IOpenAIService
-    {
-        public string DetermineWordFeatures(string word);
-        public string DeterminePhaseFeatures (string phase);
-    }
-}
+Quiero agradecer la ayuda de mi equipo de trabajo:
+-Juan Pablo Lozada
+-Margie Bocanegra
+Por la ayuda y el feedback que me dieron para compactar mis ideas y crear algo más robuso y completo...
+
+Este proyecto es algo muy complejo, pero más que complejo, es muy largo, así que avanzaré según mi tiempo disponible, quería reflejar mi deseo continuo de aprendizaje  y la necesidad de retos para llegar a aprender continuamente
