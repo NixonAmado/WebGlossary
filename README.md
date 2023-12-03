@@ -39,8 +39,8 @@ En este proyecto, me centraré exclusivamente en Angular, aprendiendo durante el
 ### Patrones Frontend (No especificados)
 
 
-## Especificaciones de la aplicación mediante la metodologia Scrum
-En campusLands, tuve la oportunidad de entrenarme en SCRUM. Aproveché esta metodología ágil para convertir mi idea en el producto propuesto, explorándola con mi equipo y aclarando aspectos que estaban en el vacío.
+## Especificaciones de la aplicación mediante el marco Scrum
+En campusLands, tuve la oportunidad de entrenarme en SCRUM. Aproveché la metodología ágil para convertir mi idea en el producto propuesto, explorándola con mi equipo y aclarando aspectos que estaban en el vacío.
 
 ## Enlaces Importantes
 Sabemos que nuestra planeación y nuestro analisis no fue el mejor, se que necesitamos mejoras y feedback, por eso siente libre de comentar, ya que, los dos links tienen permisos de comentar. ayudanos a mejorar 💗💗
