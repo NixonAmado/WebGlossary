@@ -1,48 +1,60 @@
-## WebGlossary 🚀🚀
-Soy una persona que siempre esta en constante desarrollo, siempre esta buscando nuevos retos, me gusta la programación y ver como apartir de ésta, puedo solucionar los problemas de mi entorno y en este caso situaciones personales. Desde mi llegada a campusLands siempre he estado buscando retos, y de echo los encontré, pero me surgió un problema, que era el echo de que tenía la idea, pero no tenía el conocimiento, es por esto, que agradenzco a campusLands, ya qué, estando en formación he adquirido el suficiente conocimiento tecnico incluso analitico para poder hacer que mis ideas se convirtan en algo tangible. Esta aplicación va a integrar todo lo que he aprendidó en campus por parte del backend siguiendo los principios SOLID, pienzo integrarle microservicios como:
--JWT
--Consumo de Api de OpenAi (pensabá en implementar ML.Net, pero por su nivel de complejidad mejor voy a utilizar una IA ya entrenada)
--Descarga y Subida de archivos
--Convertir de HTML/CSS a PDF
--Azure Notification Hubs (Esto todavia es un sueño, ya que, es algo que todavia no manejo, pero el tiempo se encargará de que lo pueda implementar)
+# WebGlossary 🚀
 
-BackEnd:
--.Net Core 7
--Asp.Net
--Entity Framework (ORM)
--Linq
+Soy una persona apasionada por el desarrollo, siempre en búsqueda de nuevos retos. Me encanta la programación y la forma en que puedo resolver problemas en mi entorno a través de ella. Mi paso por campusLands ha sido una experiencia llena de desafíos, y agradezco a este centro de formación por brindarme el conocimiento técnico y analítico necesario para convertir mis ideas en realidades tangibles.
 
-Patrones backend: 
--MVC
--Repository
--DI
--Unit of Work
--Singleton
+Esta aplicación integrará todo lo aprendido en campus, siguiendo principios SOLID en el backend. Planeo incorporar microservicios como:
 
-FrontEnd: (En este proyecto solo usaré Angular, aprenderé en el proceso)
--TypeScript
--Css
--HTML
--JavaScript(solo si es necesario)
--Bootstrap
--JQuery
+- **JWT**
+- Consumo de API de **OpenAI** (Consideré ML.Net, pero por su complejidad opté por utilizar una IA preentrenada)
+- Descarga y subida de archivos
+- Conversión de HTML/CSS a PDF
+- **Azure Notification Hubs** (Aunque aún es un sueño, ya que no tengo experiencia, confío en que podré implementarlo)
 
-Patrones FrontEnd:(No especificados)
+## Backend
+
+- **.Net Core 7**
+- **ASP.Net**
+- **Entity Framework (ORM)**
+- **Linq**
+
+### Patrones Backend
+
+- MVC
+- Repository
+- DI (Dependency Injection)
+- Unit of Work
+- Singleton
+
+## Frontend
+
+En este proyecto, me centraré exclusivamente en Angular, aprendiendo durante el proceso.
+
+- **TypeScript**
+- **CSS**
+- **HTML**
+- JavaScript
+- Bootstrap
+- JQuery
+
+### Patrones Frontend (No especificados)
 
 
-En campuslands tuve la oprtunidad de entrenarme en SCRUM y aproveché para utilizar mi idea como product y junto con mi equipo de trabajo explorarlo y aclarar muchas cosas que estaban en el vacio.
+## Especificaciones de la aplicación mediante la metodologia Scrum
+En campusLands, tuve la oportunidad de entrenarme en SCRUM. Aproveché esta metodología ágil para convertir mi idea en el producto propuesto, explorándola con mi equipo y aclarando aspectos que estaban en el vacío.
 
-Por supuesto que nuestra planeación y nuestro analisis no fue el mejor, se que necesitamos mejoras y feedback, por eso siente libre de comentar, ya que, los dos links tienen permisos de comentar. ayudanos a mejorar 💗💗
+## Enlaces Importantes
+Sabemos que nuestra planeación y nuestro analisis no fue el mejor, se que necesitamos mejoras y feedback, por eso siente libre de comentar, ya que, los dos links tienen permisos de comentar. ayudanos a mejorar 💗💗
 
-Si quieres saber más acerca de la planeación que hicimos para esta idea sigue el siguiente enlace:
-https://docs.google.com/document/d/1owYqZ9iEpoDVmNXWlrRawY1ZJ5lR4FCwYbQFKi8hgg0/edit?usp=sharing
+- [Planeación del Proyecto](https://docs.google.com/document/d/1owYqZ9iEpoDVmNXWlrRawY1ZJ5lR4FCwYbQFKi8hgg0/edit?usp=sharing)
+- [Historias de Usuario](https://www.canva.com/design/DAF1xG3esFs/pgG7OTTg7K4CyERIUz9RsA/edit?utm_content=DAF1xG3esFs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-si quieres saber acerca de como manejamos las historias de usuario sigue este enlace:
-https://www.canva.com/design/DAF1xG3esFs/pgG7OTTg7K4CyERIUz9RsA/edit?utm_content=DAF1xG3esFs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+## Agradecimientos
 
-Quiero agradecer la ayuda de mi equipo de trabajo:
--Juan Pablo Lozada
--Margie Bocanegra
-Por la ayuda y el feedback que me dieron para compactar mis ideas y crear algo más robuso y completo...
+Quiero expresar mi gratitud a mi equipo de trabajo:
 
-Este proyecto es algo muy complejo, pero más que complejo, es muy largo, así que avanzaré según mi tiempo disponible, quería reflejar mi deseo continuo de aprendizaje  y la necesidad de retos para llegar a aprender continuamente
+- **Juan Pablo Lozada**
+- **Margie Bocanegra**
+
+Por su valiosa ayuda y feedback, contribuyendo a consolidar mis ideas y crear algo robusto y completo.
+
+Este proyecto es complejo y extenso, avanzaré según mi tiempo disponible. Quiero reflejar mi deseo continuo de aprendizaje y la necesidad de desafíos para seguir creciendo.
