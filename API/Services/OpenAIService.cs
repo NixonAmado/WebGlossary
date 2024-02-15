@@ -37,7 +37,6 @@ public class OpenAIService : IOpenAIService
             var requestBodyJson = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
             var content = new StringContent(requestBodyJson, Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("", content);
-            await Task.Delay(TimeSpan.FromSeconds(1)); 
             if (response.IsSuccessStatusCode)
             {
                 var responseJson = await response.Content.ReadAsStringAsync();
