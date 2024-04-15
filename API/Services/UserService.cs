@@ -39,7 +39,7 @@ public class UserService : IUserService
         if (existingUser == null)
         {
             var rolDefault = _unitOfWork.Roles
-                                    .Find(u => u.Description == Authorization.rol_default.ToString())
+                                    .Find(u => u.Description.ToLower() == Authorization.rol_default.ToString().ToLower())
                                     .First();
             try
             {

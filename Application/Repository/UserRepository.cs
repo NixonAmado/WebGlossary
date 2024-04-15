@@ -15,12 +15,15 @@ namespace Application.Repository
             _context = context;
         }
 
-        public async Task<User> GetByUserNameAsync(string name)
+        public async Task<User> GetByUserNameAsync(string nameEmail)
         {
             return await _context.Users
                             .Include(p => p.Roles)
-                            .FirstOrDefaultAsync(u => u.User_name.ToLower() == name.ToLower());
+                            .FirstOrDefaultAsync(
+                                u => u.User_name.ToLower() == nameEmail.ToLower() ||
+                                    u.User_email.ToLower() == nameEmail.ToLower());
         }
+        
         public async Task<User> GetByRefreshTokenAsync(string refreshToken)
         {
         return await _context.Users

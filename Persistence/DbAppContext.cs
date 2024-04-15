@@ -43,18 +43,15 @@ public partial class DbAppContext : DbContext
 
         var roles = new[]
         {
-            new Role { Id = 1, Description = "Administrador" },
-            new Role { Id = 2, Description = "Empleado" },
+            new Role { Id = 1, Description = "Administrator" },
+            new Role { Id = 2, Description = "User" },
             // Agrega otros roles según tus necesidades
         };
 
         modelBuilder.Entity<Role>().HasData(roles);
     
 
-        OnModelCreatingPartial(modelBuilder);
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
